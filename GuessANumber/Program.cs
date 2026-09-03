@@ -1,9 +1,23 @@
 ﻿using System.Net.Security;
 
 Console.WriteLine("Hello, World!");
-Console.WriteLine("Gæt et tal, please!");
+Random rand = new Random();
+int tal = rand.Next(1, 11);
+Console.WriteLine(tal);
+int number = int.Parse(Console.ReadLine());
 
-int guess = int.Parse(Console.ReadLine());
-
-Console.WriteLine(guess);
-Console.WriteLine("hello!");
+while (number != tal)
+{
+    if (number < tal)
+    {
+        Console.WriteLine("lower");
+    }
+    else if (number > tal)
+    {
+        Console.WriteLine("higer!");
+    }
+    else if (number == tal)
+    {
+        Console.WriteLine("flot!");
+    }
+}

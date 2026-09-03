@@ -8,11 +8,11 @@ int number = int.Parse(Console.ReadLine());
 
 while (number != tal)
 {
-    if (number < tal)
+    if (number > tal)
     {
         Console.WriteLine("lower");
     }
-    else if (number > tal)
+    else if (number < tal)
     {
         Console.WriteLine("higer!");
     }

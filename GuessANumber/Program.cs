@@ -3,7 +3,10 @@
 Random rand = new Random();
 int tal = rand.Next(1, 101);
 Console.WriteLine("gæt et tal mellem 1 og 100");
+
+int gues = 0;
 int number = int.Parse(Console.ReadLine());
+gues++;
 
 while (number != tal)
 {
@@ -17,5 +20,6 @@ while (number != tal)
     }
 
     number = int.Parse(Console.ReadLine());
+    gues++;
 }
-Console.WriteLine("flot!");
+Console.WriteLine($" flot! du brugte {gues} forsøg");

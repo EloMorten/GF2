@@ -36,7 +36,6 @@ while (true)
     else
     {
         Console.WriteLine($"du brugte {gues} forsøg");
-        break;
     }
 }
 

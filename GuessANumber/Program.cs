@@ -1,12 +1,11 @@
 ﻿using System.Net.Security;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-List<int> list = new List<int>();
 Random rand = new Random();
-int tal = rand.Next(1, 11);
-Console.WriteLine("spiller 1 skal gæt et tal mellem 1 og 10");
-
-int gues = 0;
+int tal = rand.Next(1, 101);
+Console.WriteLine("spiller 1 skal gæt et tal mellem 1 og 100!");
+List<int> list = new List<int>();
+int guess = 0;
 
 while (true)
 {
@@ -19,13 +18,13 @@ while (true)
         continue;
     }
 
-    if (number < 1 || number > 10)
+    if (number < 1 || number > 100)
     {
-        Console.WriteLine("Tallet skal være mellem 1 og 10!");
+        Console.WriteLine("Tallet skal være mellem 1 og 100!");
         continue;
     }
 
-    gues++;
+    guess++;
 
     if (number > tal)
     {
@@ -39,19 +38,21 @@ while (true)
     }
     else
     {
-        Console.WriteLine($"du brugte {gues} forsøg");
+        Console.WriteLine($"du brugte {guess} forsøg");
         list.Add(number);
         break;
     }
 }
 
+Console.WriteLine(string.Join(" ,", list));
+
+// spiller 2
 List<int> list2 = new List<int>();
 Random rand2 = new Random();
-int tal2 = rand2.Next(1, 10);
-Console.WriteLine(string.Join(" ,", list));
-Console.WriteLine("Nu skal din modstander gæt et tal mellem 1 og 10");
+int tal2 = rand2.Next(1, 101);
+Console.WriteLine("Nu skal din modstander gæt et tal mellem 1 og 100");
 
-int gues2 = 0;
+int guess2 = 0;
 
 while (true)
 {
@@ -64,13 +65,13 @@ while (true)
         continue;
     }
 
-    if (number2 < 1 || number2 > 10)
+    if (number2 < 1 || number2 > 100)
     {
-        Console.WriteLine("Tallet skal være mellem 1 og 10!");
+        Console.WriteLine("Tallet skal være mellem 1 og 100");
         continue;
     }
 
-    gues2++;
+    guess2++;
 
     if (number2 > tal2)
     {
@@ -84,18 +85,18 @@ while (true)
     }
     else
     {
-        Console.WriteLine($"du brugte {gues2} forsøg");
+        Console.WriteLine($"du brugte {guess2} forsøg");
         list2.Add(number2);
         Console.WriteLine(string.Join(" ,", list2));
         break;
     }
 }
 
-if (gues < gues2)
+if (guess < guess2)
 {
     Console.WriteLine("spiller et vandt");
 }
-else if (gues > gues2)
+else if (guess > guess2)
 {
     Console.WriteLine("spiller 2 vandt");
 }

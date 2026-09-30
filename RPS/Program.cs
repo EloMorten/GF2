@@ -1,9 +1,10 @@
 ﻿Console.WriteLine("Vælg: sten, saks eller papir");
 
 int Spoints = 0;
-int PSpoints = 0;
+int PCpoints = 0;
 string pc = "";
-while (Spoints < 3 && PSpoints < 3)
+
+while (Spoints < 3 && PCpoints < 3)
 {
     string spiller = Console.ReadLine();
     Random random = new Random();
@@ -46,17 +47,17 @@ while (Spoints < 3 && PSpoints < 3)
     )
     {
         Console.WriteLine("Computeren vandt!");
-        PSpoints++;
+        PCpoints++;
     }
     else
     {
         Console.WriteLine("Du skal skrive sten, saks eller papir.");
     }
-    Console.WriteLine($"computer points = {PSpoints}");
+    Console.WriteLine($"computer points = {PCpoints}");
     Console.WriteLine($"dine points = {Spoints}");
 }
 
-if (PSpoints == 3)
+if (PCpoints == 3)
 {
     Console.WriteLine("Computeren vandt!");
 }
